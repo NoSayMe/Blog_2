@@ -41,30 +41,16 @@ name : admin
 password : juro000
 ```
 
-
-
-
-
-
-
-
-5 . Migrate
+Settings setup
+=================
+1 . Creating app inside our project directory
  ```
-python3 manage.py migrate
+python3 manage.py startapp accounts
 ```
-5 . Migrate
+
+2 . Adding our app to settings.py
  ```
-python3 manage.py migrate
-```
-5 . Migrate
- ```
-python3 manage.py migrate
-```
-5 . Migrate
- ```
-python3 manage.py migrate
-```
-5 . Migrate
- ```
-python3 manage.py migrate
+INSTALLED_APPS = [
+'accounts',
+]
 ```
