@@ -20,4 +20,5 @@ import accounts.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('signup/', accounts.views.signup, name='signup'),
+    path('login/', accounts.views.loginview, name='login'),
 ]
