@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 
 
-# Create your views here.
 def signup(request):
     if request.method == 'POST':
         if request.POST['password1'] == request.POST['password2']:
@@ -25,7 +24,7 @@ def loginview(request):
         user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
         if user is not None:
             login(request, user)
-            # Redirect to a success page.
+            return render(request, 'accounts/signup.html', {'error': 'Login successful!'})
         else:
             return render(request, 'accounts/signup.html', {'error': 'Username or password didn\'t match'})
     else:
