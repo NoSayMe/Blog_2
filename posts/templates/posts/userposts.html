@@ -2,13 +2,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h1>All posts by {{ author.username }}</h1>
+
 <br/>
-<br/>
-<h1>Welcome to Nowhere!</h1>
-<a class="btn btn-primary" href="{% url 'posts:create' %}">Tweet</a>
-<br/>
-<br/>
-<hr/>
+
 {% for post in posts.all %}
 
 <table>
@@ -22,6 +19,7 @@
     {% csrf_token %}
     <input type="hidden"/>
 </form>
+
 <form id="downvote{{ post.id }}" method="POST" action="{% url 'posts:downvote' post.id %}">
     {% csrf_token %}
     <input type="hidden"/>
